@@ -1,12 +1,9 @@
 
 function jumble(input, shift) {
-    console.log("the input "+ input);
-    console.log("the shift "+ shift);
     if (!/^-?\d+$/.test(shift)) console.error('Shift is not an integer')
 //    if (shift < 0 || shift >= 26) console.error('Shift is out of range')
 
     var output = '', len = input.length
-    console.log("the input length "+ input.length);
 	for (var i = 0; i < len; i++) {
 		var c = input.charCodeAt(i);
         // Small fix for cedilla
@@ -29,7 +26,6 @@ function jumble(input, shift) {
         }
 
 	}
-	console.log("the output "+ output);
 	return output
 }
 
