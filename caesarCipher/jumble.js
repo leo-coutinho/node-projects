@@ -13,17 +13,22 @@ function jumble(input, shift) {
             c = 67;
 
 		if (c >= 65 && c <=  90) {
-            // uppercase
+            // A-Z uppercase
             output += String.fromCharCode((c - 65 + shift) % 26 + 65)
         }
 		else if (c >= 97 && c <= 122) {
-            // lowercase
+            // a - z lowercase
             output += String.fromCharCode((c - 97 + shift) % 26 + 97)
         }
-		else {
-            // copy thru
+        else if(c === 32) {
+            // Space copy thru
             output += input.charAt(i)
         }
+		else if( c >= 48 && c <= 57){
+            // Not special chars copy thru
+            output += input.charAt(i)
+        }
+
 
 	}
 	return output
